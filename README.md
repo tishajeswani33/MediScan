@@ -1,70 +1,94 @@
 # MediScan
-MediScan is a health-centric web application that allows users to scan medicines to identify their uses and understand the potential side effects of excessive use. Additionally, users can input their symptoms to receive medically valid recommendations for potential conditions and suggested next steps.
+
+
+MediScan is an innovative health-focused web application that allows users to scan medicines to discover their uses and learn about potential side effects or reactions from excessive usage. Additionally, the platform provides a smart symptom checker where users can input their symptoms and receive valid health recommendations.
 
 Features
 Medicine Scanning
-Users can scan or search for any medicine to find out its name, uses, and important precautions.
+Upload or enter the name of any medicine to view its uses, precautions, and other relevant information.
 
-Side Effects and Reactions
-The application highlights potential side effects and reactions caused by overdose or prolonged use of medicines.
+Side Effects Detection
+Understand the possible consequences of medicine overuse or incorrect dosage.
 
-Symptom Checker
-Users can enter symptoms they are experiencing, and MediScan will provide likely health conditions and relevant guidance.
+Symptom-Based Suggestions
+Input symptoms in plain language and get likely conditions with advice on what to do next.
 
-Recommendations
-Get instant and valid medical suggestions based on entered symptoms, including basic care steps or a recommendation to consult a doctor.
+Real-Time Recommendations
+Receive instant, relevant suggestions for minor conditions and guidance on when to consult a medical professional.
 
-How It Works
-Upload or scan the image of a medicine, or enter its name manually.
+Tech Stack
+HTML for structure
 
-View detailed information about the medicine including:
+CSS for styling and responsive layout
 
-Description
+JavaScript for core functionality and interactivity
 
-Common uses
-
-Side effects and precautions
-
-Use the symptom checker by entering your symptoms in natural language.
-
-Receive a list of potential causes, recommended medications, and whether a visit to a healthcare provider is advised.
-
-Technologies Used
-Frontend: HTML, CSS, JavaScript
-
-Backend: Node.js / Python (based on implementation)
-
-OCR API or ML Model for Medicine Scanning
-
-Symptom-to-Disease Matching API or Dataset
-
-Database: MongoDB / Firebase / MySQL (based on implementation)
+TypeScript for better type safety and scalable development
 
 Getting Started
-To run this project locally:
+To run the MediScan project locally:
 
 Clone the repository
 
-Install dependencies using npm install or pip install -r requirements.txt
+Open the project folder in your code editor
 
-Run the application using npm start or python app.py
+Launch index.html in your browser
 
-Open your browser and navigate to http://localhost:3000 (or the specified port)
+Ensure you have a local or hosted backend API (if used) for medicine recognition and symptom analysis
 
-Future Improvements
-Multi-language support
+Folder Structure
+/src – contains main HTML, CSS, JavaScript, and TypeScript files
 
-AI-based personalized recommendations
+/assets – images, icons, and fonts
 
-Integration with pharmacies and doctor booking systems
+/data – JSON or static files for demo data (optional)
 
-Real-time chat with healthcare advisors
+/dist – compiled and optimized TypeScript output (if using a bundler)
+
+How It Works
+Users scan or search for a medicine to fetch its use-cases and possible side effects
+
+A built-in symptom input system analyzes user queries and returns health suggestions
+
+The application provides actionable advice or warns users about potential risks
+
+Future Enhancements
+Integration with a live medical database or API
+
+Speech-to-text for symptom input
+
+User authentication and health history tracking
+
+Progressive Web App (PWA) support for offline access
 
 Disclaimer
-MediScan is intended for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for any medical concerns.
+MediScan is designed for educational and informational purposes only. It does not replace professional medical advice, diagnosis, or treatment. Always seek advice from licensed healthcare providers.
 
 License
 This project is licensed under the MIT License.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
