@@ -1,220 +1,374 @@
-import { Medicine } from '../types/Medicine';
-
-// Mock data for demonstration - in a real app, this would come from a backend API
-const mockMedicines: Medicine[] = [
   {
-    id: 'paracetamol-500mg',
-    name: 'Paracetamol',
+    id: 'dolo-650',
+    name: 'Dolo 650',
     form: 'Tablet',
-    strength: '500mg',
-    purpose: 'Paracetamol is used to relieve mild to moderate pain and reduce fever. It\'s commonly used to treat headaches, toothaches, backaches, menstrual cramps, minor arthritis pain, colds, and flu symptoms.',
+    strength: '650mg',
+    purpose: 'Dolo 650 is used to temporarily relieve fever and mild to moderate pain such as headache, toothache, menstrual cramps, arthritis pain, and cold/flu symptoms. It contains Paracetamol which works by reducing fever and blocking pain signals in the body.',
     benefits: [
-      'Fast-acting pain relief',
-      'Effectively reduces fever',
-      'Generally well-tolerated',
-      'Can be taken with most other medications',
-      'Suitable for most people including pregnant women'
+      'Fast and effective fever reduction',
+      'Relieves mild to moderate pain',
+      'Safe for most adults and children above 12 years',
+      'Can be taken with or without food',
+      'Generally well-tolerated with minimal side effects'
     ],
-    ingredients: ['Paracetamol 500mg', 'Maize starch', 'Potassium sorbate'],
+    ingredients: ['Paracetamol IP 650mg', 'Maize starch', 'Pregelatinised starch', 'Povidone', 'Stearic acid', 'Talc'],
     categories: ['Analgesic', 'Antipyretic'],
     conditions: [
-      'Headache',
       'Fever',
+      'Headache',
+      'Body pain',
       'Toothache',
-      'Muscle pain',
-      'Arthritis',
+      'Arthritis pain',
       'Common cold',
-      'Flu'
+      'Post-vaccination fever'
     ],
     warnings: [
-      'Do not exceed the stated dose',
-      'Do not take with other paracetamol-containing products',
-      'Not recommended for children under 12 years unless advised by doctor',
-      'Consult doctor if symptoms persist for more than 3 days'
+      'Do not exceed the recommended dose of 4 tablets in 24 hours',
+      'Not recommended for children under 12 years without medical advice',
+      'Avoid alcohol while taking this medicine',
+      'Consult doctor if symptoms persist for more than 3 days',
+      'Not recommended for patients with severe liver disease'
     ],
     sideEffects: {
       common: [
-        'Generally well-tolerated when taken as directed',
-        'Rarely causes side effects at recommended doses'
+        'Generally well-tolerated at recommended doses',
+        'Mild nausea or stomach discomfort',
+        'Mild skin reactions in rare cases'
       ],
       serious: [
-        'Allergic reactions (rash, itching, swelling)',
+        'Severe allergic reactions (rare)',
+        'Liver damage (with prolonged use or overdose)',
         'Unusual bleeding or bruising',
-        'Yellowing of skin or eyes (jaundice)',
-        'Dark urine or clay-colored stools'
+        'Severe skin reactions (very rare)',
+        'Breathing difficulties (seek immediate medical attention)'
       ]
     },
-    overdoseEffects: 'Paracetamol overdose can cause severe liver damage, which may initially show no symptoms but can be fatal. If overdose is suspected, seek immediate medical attention. Symptoms may include nausea, vomiting, sweating, and pain in the upper abdomen.',
+    overdoseEffects: 'Paracetamol overdose is a medical emergency that can cause severe liver damage. Early symptoms include nausea, vomiting, excessive sweating, and abdominal pain. Seek immediate medical attention if overdose is suspected, even if you feel well, as symptoms of liver damage may not appear for 24-48 hours.',
     dosage: {
-      description: 'Take with a full glass of water. Can be taken with or without food.',
+      description: 'Take with a full glass of water. Can be taken with or without food. Space doses evenly throughout the day.',
       ageGroups: [
         {
           group: 'Adults and children over 12 years',
-          dosage: '1-2 tablets (500-1000mg) every 4-6 hours as needed',
-          notes: 'Maximum 8 tablets (4000mg) in 24 hours'
+          dosage: '1 tablet every 4-6 hours when required',
+          notes: 'Maximum 4 tablets (2600mg) in 24 hours'
         },
         {
           group: 'Children 6-12 years',
-          dosage: '½-1 tablet (250-500mg) every 4-6 hours as needed',
-          notes: 'Maximum 4 tablets (2000mg) in 24 hours'
+          dosage: 'Consult healthcare provider',
+          notes: 'Lower strength formulations recommended'
         },
         {
-          group: 'Not recommended for children under 6 years',
-          dosage: 'Consult a doctor'
+          group: 'Children under 6 years',
+          dosage: 'Not recommended',
+          notes: 'Use pediatric formulations as advised by doctor'
         }
       ]
     },
-    administration: 'Swallow tablets whole with water. Do not crush or chew unless specifically instructed. Can be taken with or without food.',
+    administration: 'Swallow tablet whole with water. Do not crush or chew. Can be taken before or after meals. If taken for fever, monitor temperature regularly.',
     storage: {
-      temperature: 'Store at room temperature (15-25°C)',
-      instructions: 'Keep in a dry place away from direct sunlight. Keep out of reach of children.'
+      temperature: 'Store below 30°C in a dry place',
+      instructions: 'Keep away from direct sunlight and moisture. Keep out of reach of children.'
     },
     expiryDate: '2025-06-30',
     disposal: 'Return unused or expired medicine to a pharmacy for safe disposal. Do not flush down the toilet or throw in household trash.'
   },
   {
-    id: 'ibuprofen-200mg',
-    name: 'Ibuprofen',
+    id: 'crocin-advance',
+    name: 'Crocin Advance',
     form: 'Tablet',
-    strength: '200mg',
-    purpose: 'Ibuprofen is used to relieve pain, reduce inflammation, and lower fever. It\'s commonly used for headaches, dental pain, menstrual cramps, muscle aches, arthritis, and minor injuries.',
+    strength: '500mg',
+    purpose: 'Crocin Advance contains Paracetamol and provides faster relief from fever and mild to moderate pain compared to regular paracetamol tablets. It uses advanced formulation technology for quicker absorption.',
     benefits: [
-      'Reduces inflammation',
-      'Provides effective pain relief',
-      'Helps reduce fever',
-      'Long-lasting effect',
-      'Anti-inflammatory properties help with swelling'
+      'Rapid pain relief',
+      'Quick fever reduction',
+      'Advanced formulation for faster action',
+      'Suitable for most adults',
+      'Can be taken on empty stomach'
     ],
-    ingredients: ['Ibuprofen 200mg', 'Microcrystalline cellulose', 'Hypromellose'],
-    categories: ['Analgesic', 'Anti-inflammatory', 'NSAID'],
+    ingredients: ['Paracetamol IP 500mg', 'Advanced carrier system', 'Microcrystalline cellulose', 'Sodium starch glycolate'],
+    categories: ['Analgesic', 'Antipyretic', 'Fast-Acting'],
     conditions: [
+      'Fever',
       'Headache',
+      'Migraine',
       'Dental pain',
-      'Menstrual pain',
-      'Muscle aches',
-      'Arthritis',
-      'Sports injuries',
-      'Inflammation'
+      'Muscular pain',
+      'Post-vaccination fever',
+      'Cold and flu symptoms'
     ],
     warnings: [
-      'Do not use if you have had an allergic reaction to ibuprofen or other NSAIDs',
-      'Do not use if you have had stomach ulcers or bleeding',
-      'Consult doctor before use if you have heart, kidney, or liver problems',
-      'Not recommended during the last trimester of pregnancy'
+      'Do not exceed 8 tablets in 24 hours',
+      'Not for children under 12 years without medical advice',
+      'Avoid alcohol consumption',
+      'Not recommended during pregnancy without medical advice',
+      'Stop use if allergic reactions occur'
     ],
     sideEffects: {
       common: [
-        'Stomach upset, heartburn, or nausea',
-        'Mild headache or dizziness',
-        'Mild rash or itching'
+        'Mild stomach discomfort',
+        'Slight drowsiness',
+        'Temporary fatigue'
       ],
       serious: [
-        'Stomach pain, black stools, or vomiting blood (signs of bleeding)',
-        'Allergic reactions including skin blistering',
-        'Swelling of face, lips, or throat',
-        'Difficulty breathing',
-        'Chest pain or heart palpitations'
+        'Severe allergic reactions',
+        'Liver problems',
+        'Unusual bleeding',
+        'Severe skin reactions',
+        'Breathing problems'
       ]
     },
-    overdoseEffects: 'Ibuprofen overdose can cause stomach pain, nausea, vomiting, drowsiness, black stools, and breathing difficulties. In severe cases, it can lead to kidney failure, coma, and death. Seek immediate medical attention if overdose is suspected.',
+    overdoseEffects: 'Overdose can cause severe liver damage. Symptoms include nausea, vomiting, loss of appetite, and abdominal pain. Immediate medical attention is required even if no symptoms are present.',
     dosage: {
-      description: 'Take with food or milk to reduce stomach upset. Take the lowest effective dose for the shortest duration.',
+      description: 'Take with water as needed. Space doses by at least 4 hours.',
       ageGroups: [
         {
           group: 'Adults and children over 12 years',
-          dosage: '1-2 tablets (200-400mg) every 4-6 hours as needed',
-          notes: 'Maximum 6 tablets (1200mg) in 24 hours'
+          dosage: '1-2 tablets every 4-6 hours',
+          notes: 'Maximum 8 tablets in 24 hours'
         },
         {
           group: 'Children 6-12 years',
-          dosage: '½-1 tablet (100-200mg) every 6-8 hours as needed',
-          notes: 'Maximum 3 tablets (600mg) in 24 hours'
+          dosage: 'Consult doctor',
+          notes: 'Use pediatric formulation'
         },
         {
           group: 'Not recommended for children under 6 years',
-          dosage: 'Consult a doctor'
+          dosage: 'Consult pediatrician'
         }
       ]
     },
-    administration: 'Take with or after food with a full glass of water. Swallow tablets whole; do not crush or chew unless specifically formulated as chewable tablets.',
+    administration: 'Take with water. Can be taken with or without food. For fever, monitor temperature regularly.',
     storage: {
-      temperature: 'Store below 25°C',
-      instructions: 'Keep in the original container to protect from moisture and light. Keep out of sight and reach of children.'
+      temperature: 'Store below 30°C',
+      instructions: 'Keep in original package away from moisture and sunlight.'
     },
     expiryDate: '2025-03-15',
-    disposal: 'Return unused or expired medicine to a pharmacy for safe disposal. Do not flush down the toilet or throw in household trash.'
+    disposal: 'Return to pharmacy for proper disposal. Do not dispose in household waste.'
   },
   {
-    id: 'amoxicillin-500mg',
-    name: 'Amoxicillin',
-    form: 'Capsule',
+    id: 'azithral-500',
+    name: 'Azithral 500',
+    form: 'Tablet',
     strength: '500mg',
-    purpose: 'Amoxicillin is an antibiotic used to treat a wide range of bacterial infections, including respiratory tract infections, ear infections, urinary tract infections, skin infections, and dental infections.',
+    purpose: 'Azithral 500 is an antibiotic used to treat various bacterial infections including respiratory tract infections, skin infections, ear infections, and sexually transmitted diseases. It contains Azithromycin, which belongs to the macrolide class of antibiotics.',
     benefits: [
       'Broad-spectrum antibiotic coverage',
-      'Effectively treats many bacterial infections',
-      'Generally well-tolerated',
-      'Can be taken with or without food',
-      'Available in multiple forms for different needs'
+      'Once-daily dosing',
+      'Shorter treatment duration',
+      'Good tissue penetration',
+      'Generally well-tolerated'
     ],
-    ingredients: ['Amoxicillin trihydrate equivalent to 500mg amoxicillin', 'Magnesium stearate', 'Gelatin capsule shell'],
-    categories: ['Antibiotic', 'Penicillin'],
+    ingredients: ['Azithromycin Dihydrate IP eq. to Azithromycin 500mg', 'Dibasic Calcium Phosphate', 'Pregelatinized Starch'],
+    categories: ['Antibiotic', 'Macrolide'],
     conditions: [
-      'Respiratory infections',
-      'Ear infections',
-      'Urinary tract infections',
+      'Respiratory tract infections',
       'Skin infections',
-      'Dental infections',
-      'Strep throat'
+      'Ear infections',
+      'Sinusitis',
+      'Pharyngitis',
+      'Tonsillitis',
+      'Sexually transmitted infections'
     ],
     warnings: [
-      'Do not use if allergic to penicillin antibiotics',
-      'Take the full course as prescribed, even if you feel better',
-      'May reduce the effectiveness of hormonal contraceptives',
-      'May cause diarrhea, which can be severe or persistent'
+      'Complete the full course as prescribed',
+      'Take on empty stomach 1 hour before or 2 hours after meals',
+      'Not suitable for patients with liver or kidney problems',
+      'May cause heart rhythm problems in some patients',
+      'Inform doctor about any allergies or medical conditions'
     ],
     sideEffects: {
       common: [
-        'Diarrhea or loose stools',
-        'Nausea or vomiting',
-        'Stomach pain or discomfort',
-        'Skin rash'
+        'Nausea and vomiting',
+        'Diarrhea',
+        'Stomach pain',
+        'Loss of appetite',
+        'Dizziness'
       ],
       serious: [
-        'Severe allergic reaction (anaphylaxis)',
-        'Severe skin reactions with blistering',
-        'Severe, persistent diarrhea (possibly indicating C. difficile infection)',
-        'Unusual bleeding or bruising',
-        'Yellowing of skin or eyes (jaundice)'
+        'Severe allergic reactions',
+        'Irregular heartbeat',
+        'Severe diarrhea',
+        'Liver problems',
+        'Hearing problems'
       ]
     },
-    overdoseEffects: 'Amoxicillin overdose may cause kidney problems, seizures, or severe gastrointestinal symptoms. Though generally not life-threatening, any suspected overdose should be treated as a medical emergency.',
+    overdoseEffects: 'Overdose may cause severe gastrointestinal problems, liver dysfunction, and heart rhythm abnormalities. Seek immediate medical attention if overdose is suspected.',
     dosage: {
-      description: 'Take at regular intervals, as prescribed by your doctor. Complete the full course of treatment.',
+      description: 'Take as prescribed by your doctor. Usually taken once daily.',
       ageGroups: [
         {
-          group: 'Adults and children over 40kg',
-          dosage: '500mg three times daily or as prescribed',
-          notes: 'Higher doses may be prescribed for severe infections'
+          group: 'Adults and children over 45kg',
+          dosage: '500mg once daily for 3-5 days',
+          notes: 'Duration depends on type of infection'
         },
         {
-          group: 'Children 20-40kg',
-          dosage: '250mg three times daily or as prescribed',
-          notes: 'Dose adjusted based on age and weight'
+          group: 'Children 15-45kg',
+          dosage: 'Based on weight - consult doctor',
+          notes: 'Usually 10mg/kg once daily'
         },
         {
-          group: 'Children under 20kg',
-          dosage: 'Determined by doctor based on weight'
+          group: 'Children under 15kg',
+          dosage: 'Not recommended in tablet form',
+          notes: 'Use suspension form as prescribed'
         }
       ]
     },
-    administration: 'Take with or without food at evenly spaced intervals throughout the day. Swallow capsules whole with water. Do not chew or crush.',
+    administration: 'Take on an empty stomach, 1 hour before or 2 hours after meals. Complete the full course even if you feel better.',
     storage: {
-      temperature: 'Store below 25°C',
-      instructions: 'Keep in the original container in a dry place. Once dispensed, use within 14 days.'
+      temperature: 'Store below 30°C',
+      instructions: 'Protect from light and moisture. Keep out of reach of children.'
     },
     expiryDate: '2024-12-10',
-    disposal: 'Return unused or expired antibiotics to a pharmacy for safe disposal. Do not flush down the toilet or throw in household trash.'
+    disposal: 'Return unused antibiotics to pharmacy. Do not flush or dispose in regular trash.'
+  },
+  {
+    id: 'pantop-40',
+    name: 'Pantop 40',
+    form: 'Tablet',
+    strength: '40mg',
+    purpose: 'Pantop 40 contains Pantoprazole, a proton pump inhibitor (PPI) that reduces acid production in the stomach. It is used to treat acid reflux, peptic ulcers, and other conditions where stomach acid needs to be reduced.',
+    benefits: [
+      'Effectively reduces stomach acid production',
+      'Relieves acid reflux symptoms',
+      'Helps heal stomach ulcers',
+      'Once daily dosing',
+      'Can prevent ulcer recurrence'
+    ],
+    ingredients: ['Pantoprazole Sodium IP eq. to Pantoprazole 40mg', 'Mannitol', 'Sodium Carbonate', 'Enteric coating'],
+    categories: ['Proton Pump Inhibitor', 'Anti-Ulcer'],
+    conditions: [
+      'Acid reflux (GERD)',
+      'Peptic ulcers',
+      'Stomach ulcers',
+      'Zollinger-Ellison syndrome',
+      'Erosive esophagitis'
+    ],
+    warnings: [
+      'Take on empty stomach before breakfast',
+      'Do not crush or chew the tablet',
+      'Long-term use may increase risk of bone fractures',
+      'May interfere with certain medications',
+      'Inform doctor if pregnant or planning pregnancy'
+    ],
+    sideEffects: {
+      common: [
+        'Headache',
+        'Nausea',
+        'Stomach pain',
+        'Diarrhea',
+        'Dizziness'
+      ],
+      serious: [
+        'Severe allergic reactions',
+        'Kidney problems',
+        'Low magnesium levels',
+        'Vitamin B12 deficiency',
+        'Increased risk of bone fractures'
+      ]
+    },
+    overdoseEffects: 'Overdose symptoms may include confusion, drowsiness, blurred vision, rapid heartbeat, nausea, and dry mouth. Seek immediate medical attention if overdose is suspected.',
+    dosage: {
+      description: 'Take one tablet daily before breakfast. Swallow whole with water.',
+      ageGroups: [
+        {
+          group: 'Adults and adolescents 12 years and older',
+          dosage: '40mg once daily',
+          notes: 'Duration depends on condition being treated'
+        },
+        {
+          group: 'Children under 12 years',
+          dosage: 'Not recommended',
+          notes: 'Consult pediatrician for alternatives'
+        }
+      ]
+    },
+    administration: 'Take one tablet in the morning before breakfast. Swallow whole with water. Do not crush, chew, or break the tablet.',
+    storage: {
+      temperature: 'Store below 25°C',
+      instructions: 'Keep in original package to protect from moisture.'
+    },
+    expiryDate: '2025-08-15',
+    disposal: 'Return unused medicine to pharmacy for safe disposal.'
+  },
+  {
+    id: 'montair-lc',
+    name: 'Montair LC',
+    form: 'Tablet',
+    strength: '10mg/5mg',
+    purpose: 'Montair LC combines Montelukast and Levocetirizine to treat allergic symptoms like sneezing, runny nose, and breathing difficulties. It is particularly effective for allergic rhinitis and asthma symptoms.',
+    benefits: [
+      'Dual action against allergies',
+      '24-hour relief from allergy symptoms',
+      'Reduces asthma symptoms',
+      'Non-drowsy formula',
+      'Once daily dosing'
+    ],
+    ingredients: [
+      'Montelukast Sodium IP eq. to Montelukast 10mg',
+      'Levocetirizine Dihydrochloride IP 5mg',
+      'Microcrystalline cellulose',
+      'Lactose'
+    ],
+    categories: ['Anti-Allergic', 'Bronchodilator'],
+    conditions: [
+      'Allergic rhinitis',
+      'Seasonal allergies',
+      'Asthma',
+      'Hay fever',
+      'Dust allergies',
+      'Pet allergies'
+    ],
+    warnings: [
+      'May cause mood changes or behavior changes',
+      'Not for acute asthma attacks',
+      'Avoid alcohol consumption',
+      'May cause drowsiness in some patients',
+      'Not recommended during pregnancy without medical advice'
+    ],
+    sideEffects: {
+      common: [
+        'Mild headache',
+        'Drowsiness',
+        'Dry mouth',
+        'Fatigue',
+        'Stomach upset'
+      ],
+      serious: [
+        'Mood changes',
+        'Allergic reactions',
+        'Liver problems',
+        'Depression',
+        'Suicidal thoughts (rare)'
+      ]
+    },
+    overdoseEffects: 'Overdose may cause drowsiness, restlessness, and rapid heartbeat. In severe cases, it may cause confusion and seizures. Seek immediate medical attention.',
+    dosage: {
+      description: 'Take one tablet daily in the evening.',
+      ageGroups: [
+        {
+          group: 'Adults and children over 15 years',
+          dosage: '1 tablet once daily',
+          notes: 'Take in the evening'
+        },
+        {
+          group: 'Children 6-15 years',
+          dosage: 'As prescribed by doctor',
+          notes: 'Different strength available'
+        },
+        {
+          group: 'Children under 6 years',
+          dosage: 'Not recommended',
+          notes: 'Use pediatric formulation'
+        }
+      ]
+    },
+    administration: 'Take one tablet daily in the evening with or without food. Swallow whole with water.',
+    storage: {
+      temperature: 'Store below 30°C',
+      instructions: 'Protect from light and moisture.'
+    },
+    expiryDate: '2025-05-20',
+    disposal: 'Return unused medicine to pharmacy for proper disposal.'
   }
 ];
 
