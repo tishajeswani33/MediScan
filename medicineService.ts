@@ -1,376 +1,431 @@
+  import { Medicine } from '../types/Medicine';
+
+// Comprehensive medicine database with categorization by diseases
+const mockMedicines: Medicine[] = [
+  // Antibiotics
   {
-    id: 'dolo-650',
-    name: 'Dolo 650',
+    id: 'augmentin-625',
+    name: 'Augmentin 625',
     form: 'Tablet',
-    strength: '650mg',
-    purpose: 'Dolo 650 is used to temporarily relieve fever and mild to moderate pain such as headache, toothache, menstrual cramps, arthritis pain, and cold/flu symptoms. It contains Paracetamol which works by reducing fever and blocking pain signals in the body.',
-    benefits: [
-      'Fast and effective fever reduction',
-      'Relieves mild to moderate pain',
-      'Safe for most adults and children above 12 years',
-      'Can be taken with or without food',
-      'Generally well-tolerated with minimal side effects'
-    ],
-    ingredients: ['Paracetamol IP 650mg', 'Maize starch', 'Pregelatinised starch', 'Povidone', 'Stearic acid', 'Talc'],
-    categories: ['Analgesic', 'Antipyretic'],
-    conditions: [
-      'Fever',
-      'Headache',
-      'Body pain',
-      'Toothache',
-      'Arthritis pain',
-      'Common cold',
-      'Post-vaccination fever'
-    ],
-    warnings: [
-      'Do not exceed the recommended dose of 4 tablets in 24 hours',
-      'Not recommended for children under 12 years without medical advice',
-      'Avoid alcohol while taking this medicine',
-      'Consult doctor if symptoms persist for more than 3 days',
-      'Not recommended for patients with severe liver disease'
-    ],
-    sideEffects: {
-      common: [
-        'Generally well-tolerated at recommended doses',
-        'Mild nausea or stomach discomfort',
-        'Mild skin reactions in rare cases'
-      ],
-      serious: [
-        'Severe allergic reactions (rare)',
-        'Liver damage (with prolonged use or overdose)',
-        'Unusual bleeding or bruising',
-        'Severe skin reactions (very rare)',
-        'Breathing difficulties (seek immediate medical attention)'
-      ]
-    },
-    overdoseEffects: 'Paracetamol overdose is a medical emergency that can cause severe liver damage. Early symptoms include nausea, vomiting, excessive sweating, and abdominal pain. Seek immediate medical attention if overdose is suspected, even if you feel well, as symptoms of liver damage may not appear for 24-48 hours.',
-    dosage: {
-      description: 'Take with a full glass of water. Can be taken with or without food. Space doses evenly throughout the day.',
-      ageGroups: [
-        {
-          group: 'Adults and children over 12 years',
-          dosage: '1 tablet every 4-6 hours when required',
-          notes: 'Maximum 4 tablets (2600mg) in 24 hours'
-        },
-        {
-          group: 'Children 6-12 years',
-          dosage: 'Consult healthcare provider',
-          notes: 'Lower strength formulations recommended'
-        },
-        {
-          group: 'Children under 6 years',
-          dosage: 'Not recommended',
-          notes: 'Use pediatric formulations as advised by doctor'
-        }
-      ]
-    },
-    administration: 'Swallow tablet whole with water. Do not crush or chew. Can be taken before or after meals. If taken for fever, monitor temperature regularly.',
-    storage: {
-      temperature: 'Store below 30°C in a dry place',
-      instructions: 'Keep away from direct sunlight and moisture. Keep out of reach of children.'
-    },
-    expiryDate: '2025-06-30',
-    disposal: 'Return unused or expired medicine to a pharmacy for safe disposal. Do not flush down the toilet or throw in household trash.'
-  },
-  {
-    id: 'crocin-advance',
-    name: 'Crocin Advance',
-    form: 'Tablet',
-    strength: '500mg',
-    purpose: 'Crocin Advance contains Paracetamol and provides faster relief from fever and mild to moderate pain compared to regular paracetamol tablets. It uses advanced formulation technology for quicker absorption.',
-    benefits: [
-      'Rapid pain relief',
-      'Quick fever reduction',
-      'Advanced formulation for faster action',
-      'Suitable for most adults',
-      'Can be taken on empty stomach'
-    ],
-    ingredients: ['Paracetamol IP 500mg', 'Advanced carrier system', 'Microcrystalline cellulose', 'Sodium starch glycolate'],
-    categories: ['Analgesic', 'Antipyretic', 'Fast-Acting'],
-    conditions: [
-      'Fever',
-      'Headache',
-      'Migraine',
-      'Dental pain',
-      'Muscular pain',
-      'Post-vaccination fever',
-      'Cold and flu symptoms'
-    ],
-    warnings: [
-      'Do not exceed 8 tablets in 24 hours',
-      'Not for children under 12 years without medical advice',
-      'Avoid alcohol consumption',
-      'Not recommended during pregnancy without medical advice',
-      'Stop use if allergic reactions occur'
-    ],
-    sideEffects: {
-      common: [
-        'Mild stomach discomfort',
-        'Slight drowsiness',
-        'Temporary fatigue'
-      ],
-      serious: [
-        'Severe allergic reactions',
-        'Liver problems',
-        'Unusual bleeding',
-        'Severe skin reactions',
-        'Breathing problems'
-      ]
-    },
-    overdoseEffects: 'Overdose can cause severe liver damage. Symptoms include nausea, vomiting, loss of appetite, and abdominal pain. Immediate medical attention is required even if no symptoms are present.',
-    dosage: {
-      description: 'Take with water as needed. Space doses by at least 4 hours.',
-      ageGroups: [
-        {
-          group: 'Adults and children over 12 years',
-          dosage: '1-2 tablets every 4-6 hours',
-          notes: 'Maximum 8 tablets in 24 hours'
-        },
-        {
-          group: 'Children 6-12 years',
-          dosage: 'Consult doctor',
-          notes: 'Use pediatric formulation'
-        },
-        {
-          group: 'Not recommended for children under 6 years',
-          dosage: 'Consult pediatrician'
-        }
-      ]
-    },
-    administration: 'Take with water. Can be taken with or without food. For fever, monitor temperature regularly.',
-    storage: {
-      temperature: 'Store below 30°C',
-      instructions: 'Keep in original package away from moisture and sunlight.'
-    },
-    expiryDate: '2025-03-15',
-    disposal: 'Return to pharmacy for proper disposal. Do not dispose in household waste.'
-  },
-  {
-    id: 'azithral-500',
-    name: 'Azithral 500',
-    form: 'Tablet',
-    strength: '500mg',
-    purpose: 'Azithral 500 is an antibiotic used to treat various bacterial infections including respiratory tract infections, skin infections, ear infections, and sexually transmitted diseases. It contains Azithromycin, which belongs to the macrolide class of antibiotics.',
+    strength: '625mg',
+    purpose: 'Augmentin is a combination antibiotic containing Amoxicillin and Clavulanic acid. It treats various bacterial infections including respiratory, urinary, and skin infections.',
     benefits: [
       'Broad-spectrum antibiotic coverage',
-      'Once-daily dosing',
-      'Shorter treatment duration',
-      'Good tissue penetration',
-      'Generally well-tolerated'
+      'Effective against resistant bacteria',
+      'Treats multiple types of infections',
+      'Well-established safety profile',
+      'Rapid action against bacteria'
     ],
-    ingredients: ['Azithromycin Dihydrate IP eq. to Azithromycin 500mg', 'Dibasic Calcium Phosphate', 'Pregelatinized Starch'],
-    categories: ['Antibiotic', 'Macrolide'],
+    ingredients: ['Amoxicillin 500mg', 'Clavulanic Acid 125mg'],
+    categories: ['Antibiotic', 'Broad Spectrum'],
     conditions: [
       'Respiratory tract infections',
+      'Urinary tract infections',
       'Skin infections',
-      'Ear infections',
-      'Sinusitis',
-      'Pharyngitis',
-      'Tonsillitis',
-      'Sexually transmitted infections'
+      'Dental infections',
+      'Sinusitis'
     ],
     warnings: [
-      'Complete the full course as prescribed',
-      'Take on empty stomach 1 hour before or 2 hours after meals',
-      'Not suitable for patients with liver or kidney problems',
-      'May cause heart rhythm problems in some patients',
-      'Inform doctor about any allergies or medical conditions'
+      'Complete full course as prescribed',
+      'Take with food',
+      'May cause diarrhea',
+      'Avoid if allergic to penicillins',
+      'Tell doctor about any allergies'
     ],
     sideEffects: {
       common: [
-        'Nausea and vomiting',
         'Diarrhea',
+        'Nausea',
         'Stomach pain',
-        'Loss of appetite',
-        'Dizziness'
+        'Rash',
+        'Yeast infection'
       ],
       serious: [
         'Severe allergic reactions',
-        'Irregular heartbeat',
-        'Severe diarrhea',
+        'Clostridium difficile infection',
         'Liver problems',
-        'Hearing problems'
+        'Stevens-Johnson syndrome',
+        'Seizures'
       ]
     },
-    overdoseEffects: 'Overdose may cause severe gastrointestinal problems, liver dysfunction, and heart rhythm abnormalities. Seek immediate medical attention if overdose is suspected.',
+    overdoseEffects: 'Overdose may cause nausea, vomiting, diarrhea, and in severe cases, kidney problems or seizures. Seek immediate medical attention.',
     dosage: {
-      description: 'Take as prescribed by your doctor. Usually taken once daily.',
+      description: 'Take one tablet twice daily with meals, 12 hours apart.',
       ageGroups: [
         {
-          group: 'Adults and children over 45kg',
-          dosage: '500mg once daily for 3-5 days',
-          notes: 'Duration depends on type of infection'
-        },
-        {
-          group: 'Children 15-45kg',
-          dosage: 'Based on weight - consult doctor',
-          notes: 'Usually 10mg/kg once daily'
-        },
-        {
-          group: 'Children under 15kg',
-          dosage: 'Not recommended in tablet form',
-          notes: 'Use suspension form as prescribed'
+          group: 'Adults and children over 12 years',
+          dosage: '1 tablet every 12 hours',
+          notes: 'Take with food'
         }
       ]
     },
-    administration: 'Take on an empty stomach, 1 hour before or 2 hours after meals. Complete the full course even if you feel better.',
+    administration: 'Take with meals to reduce stomach upset. Complete the full course even if you feel better.',
     storage: {
-      temperature: 'Store below 30°C',
-      instructions: 'Protect from light and moisture. Keep out of reach of children.'
+      temperature: 'Store below 25°C',
+      instructions: 'Keep away from moisture and light'
     },
-    expiryDate: '2024-12-10',
-    disposal: 'Return unused antibiotics to pharmacy. Do not flush or dispose in regular trash.'
+    expiryDate: '2025-08-31',
+    disposal: 'Return unused antibiotics to pharmacy for safe disposal.'
   },
+  // Antivirals
   {
-    id: 'pantop-40',
-    name: 'Pantop 40',
-    form: 'Tablet',
-    strength: '40mg',
-    purpose: 'Pantop 40 contains Pantoprazole, a proton pump inhibitor (PPI) that reduces acid production in the stomach. It is used to treat acid reflux, peptic ulcers, and other conditions where stomach acid needs to be reduced.',
+    id: 'tamiflu-75',
+    name: 'Tamiflu',
+    form: 'Capsule',
+    strength: '75mg',
+    purpose: 'Tamiflu (Oseltamivir) is an antiviral medication used to treat and prevent influenza A and B. It works by stopping the spread of flu virus in your body.',
     benefits: [
-      'Effectively reduces stomach acid production',
-      'Relieves acid reflux symptoms',
-      'Helps heal stomach ulcers',
-      'Once daily dosing',
-      'Can prevent ulcer recurrence'
+      'Reduces flu symptoms',
+      'Shortens illness duration',
+      'Prevents flu complications',
+      'Can be used preventively',
+      'Effective against multiple flu strains'
     ],
-    ingredients: ['Pantoprazole Sodium IP eq. to Pantoprazole 40mg', 'Mannitol', 'Sodium Carbonate', 'Enteric coating'],
-    categories: ['Proton Pump Inhibitor', 'Anti-Ulcer'],
+    ingredients: ['Oseltamivir Phosphate 75mg'],
+    categories: ['Antiviral', 'Influenza Treatment'],
     conditions: [
-      'Acid reflux (GERD)',
-      'Peptic ulcers',
-      'Stomach ulcers',
-      'Zollinger-Ellison syndrome',
-      'Erosive esophagitis'
+      'Influenza A',
+      'Influenza B',
+      'Flu prevention',
+      'Post-exposure prophylaxis',
+      'Seasonal flu'
     ],
     warnings: [
-      'Take on empty stomach before breakfast',
-      'Do not crush or chew the tablet',
-      'Long-term use may increase risk of bone fractures',
-      'May interfere with certain medications',
-      'Inform doctor if pregnant or planning pregnancy'
+      'Start within 48 hours of symptoms',
+      'Complete full course',
+      'Monitor for behavioral changes',
+      'May cause nausea',
+      'Not a substitute for flu vaccine'
+    ],
+    sideEffects: {
+      common: [
+        'Nausea',
+        'Vomiting',
+        'Diarrhea',
+        'Headache',
+        'Fatigue'
+      ],
+      serious: [
+        'Behavioral changes',
+        'Allergic reactions',
+        'Skin reactions',
+        'Confusion',
+        'Seizures'
+      ]
+    },
+    overdoseEffects: 'Overdose may cause nausea, vomiting, and neurological symptoms. Seek immediate medical attention.',
+    dosage: {
+      description: 'Take twice daily for 5 days for treatment, or as prescribed for prevention.',
+      ageGroups: [
+        {
+          group: 'Adults and teenagers',
+          dosage: '75mg twice daily',
+          notes: 'Take with or without food'
+        }
+      ]
+    },
+    administration: 'Take with or without food. If nauseous, take with food.',
+    storage: {
+      temperature: 'Store below 25°C',
+      instructions: 'Keep in original container'
+    },
+    expiryDate: '2025-12-31',
+    disposal: 'Return unused medicine to pharmacy.'
+  },
+  // Gastrointestinal
+  {
+    id: 'pantoprazole-40',
+    name: 'Pan 40',
+    form: 'Tablet',
+    strength: '40mg',
+    purpose: 'Pan 40 (Pantoprazole) reduces stomach acid production. It treats acid reflux, ulcers, and other conditions where stomach acid needs to be reduced.',
+    benefits: [
+      'Reduces stomach acid',
+      'Relieves heartburn',
+      'Heals ulcers',
+      'Prevents acid damage',
+      'Once daily dosing'
+    ],
+    ingredients: ['Pantoprazole Sodium 40mg'],
+    categories: ['Gastrointestinal', 'Proton Pump Inhibitor'],
+    conditions: [
+      'Acid reflux',
+      'Gastric ulcers',
+      'GERD',
+      'Zollinger-Ellison syndrome',
+      'Esophagitis'
+    ],
+    warnings: [
+      'Take before first meal',
+      'Do not crush or chew',
+      'Long-term use risks',
+      'May affect vitamin B12 absorption',
+      'Tell doctor if pregnant'
     ],
     sideEffects: {
       common: [
         'Headache',
         'Nausea',
-        'Stomach pain',
         'Diarrhea',
-        'Dizziness'
+        'Stomach pain',
+        'Gas'
       ],
       serious: [
-        'Severe allergic reactions',
         'Kidney problems',
-        'Low magnesium levels',
-        'Vitamin B12 deficiency',
-        'Increased risk of bone fractures'
+        'Low magnesium',
+        'Bone fractures',
+        'Severe diarrhea',
+        'Vitamin B12 deficiency'
       ]
     },
-    overdoseEffects: 'Overdose symptoms may include confusion, drowsiness, blurred vision, rapid heartbeat, nausea, and dry mouth. Seek immediate medical attention if overdose is suspected.',
+    overdoseEffects: 'Overdose symptoms include confusion, drowsiness, blurred vision, and rapid heartbeat. Seek immediate medical attention.',
     dosage: {
-      description: 'Take one tablet daily before breakfast. Swallow whole with water.',
+      description: 'Take one tablet daily before breakfast.',
       ageGroups: [
         {
-          group: 'Adults and adolescents 12 years and older',
+          group: 'Adults',
           dosage: '40mg once daily',
-          notes: 'Duration depends on condition being treated'
-        },
-        {
-          group: 'Children under 12 years',
-          dosage: 'Not recommended',
-          notes: 'Consult pediatrician for alternatives'
+          notes: 'Take before breakfast'
         }
       ]
     },
-    administration: 'Take one tablet in the morning before breakfast. Swallow whole with water. Do not crush, chew, or break the tablet.',
+    administration: 'Take on empty stomach before breakfast. Swallow whole.',
     storage: {
-      temperature: 'Store below 25°C',
-      instructions: 'Keep in original package to protect from moisture.'
+      temperature: 'Store below 30°C',
+      instructions: 'Protect from moisture'
     },
-    expiryDate: '2025-08-15',
-    disposal: 'Return unused medicine to pharmacy for safe disposal.'
+    expiryDate: '2025-07-31',
+    disposal: 'Return unused medicine to pharmacy.'
   },
+  // Hormonal
   {
-    id: 'montair-lc',
-    name: 'Montair LC',
+    id: 'thyroxine-50',
+    name: 'Thyronorm 50',
     form: 'Tablet',
-    strength: '10mg/5mg',
-    purpose: 'Montair LC combines Montelukast and Levocetirizine to treat allergic symptoms like sneezing, runny nose, and breathing difficulties. It is particularly effective for allergic rhinitis and asthma symptoms.',
+    strength: '50mcg',
+    purpose: 'Thyronorm (Levothyroxine) is used to treat hypothyroidism. It replaces the thyroid hormone that your body should naturally produce.',
     benefits: [
-      'Dual action against allergies',
-      '24-hour relief from allergy symptoms',
-      'Reduces asthma symptoms',
-      'Non-drowsy formula',
+      'Replaces thyroid hormone',
+      'Improves energy levels',
+      'Regulates metabolism',
+      'Helps maintain healthy weight',
       'Once daily dosing'
     ],
-    ingredients: [
-      'Montelukast Sodium IP eq. to Montelukast 10mg',
-      'Levocetirizine Dihydrochloride IP 5mg',
-      'Microcrystalline cellulose',
-      'Lactose'
-    ],
-    categories: ['Anti-Allergic', 'Bronchodilator'],
+    ingredients: ['Levothyroxine Sodium 50mcg'],
+    categories: ['Hormonal', 'Thyroid Hormone'],
     conditions: [
-      'Allergic rhinitis',
-      'Seasonal allergies',
-      'Asthma',
-      'Hay fever',
-      'Dust allergies',
-      'Pet allergies'
+      'Hypothyroidism',
+      'Thyroid hormone deficiency',
+      'Goiter',
+      'Thyroid cancer follow-up',
+      'Hashimoto\'s disease'
     ],
     warnings: [
-      'May cause mood changes or behavior changes',
-      'Not for acute asthma attacks',
-      'Avoid alcohol consumption',
-      'May cause drowsiness in some patients',
-      'Not recommended during pregnancy without medical advice'
+      'Take on empty stomach',
+      'Wait before eating',
+      'Regular monitoring needed',
+      'Many drug interactions',
+      'Not for weight loss'
     ],
     sideEffects: {
       common: [
-        'Mild headache',
-        'Drowsiness',
-        'Dry mouth',
+        'Weight changes',
+        'Appetite changes',
+        'Headache',
+        'Insomnia',
+        'Tremors'
+      ],
+      serious: [
+        'Chest pain',
+        'Irregular heartbeat',
+        'Severe headache',
+        'Allergic reactions',
+        'Bone loss'
+      ]
+    },
+    overdoseEffects: 'Overdose can cause heart rhythm problems, chest pain, tremors, and seizures. Requires immediate medical attention.',
+    dosage: {
+      description: 'Take one tablet daily on empty stomach, preferably in the morning.',
+      ageGroups: [
+        {
+          group: 'Adults',
+          dosage: '50-200mcg once daily',
+          notes: 'Take on empty stomach'
+        }
+      ]
+    },
+    administration: 'Take on empty stomach, 30-60 minutes before breakfast.',
+    storage: {
+      temperature: 'Store below 25°C',
+      instructions: 'Protect from light and moisture'
+    },
+    expiryDate: '2025-06-30',
+    disposal: 'Return unused medicine to pharmacy.'
+  },
+  // Respiratory
+  {
+    id: 'montelukast-10',
+    name: 'Montair 10',
+    form: 'Tablet',
+    strength: '10mg',
+    purpose: 'Montair (Montelukast) is used to prevent and treat asthma and allergy symptoms. It works by reducing inflammation in the airways.',
+    benefits: [
+      'Prevents asthma attacks',
+      'Reduces allergy symptoms',
+      'Once daily dosing',
+      'Non-drowsy',
+      'Improves breathing'
+    ],
+    ingredients: ['Montelukast Sodium 10mg'],
+    categories: ['Respiratory', 'Anti-inflammatory'],
+    conditions: [
+      'Asthma',
+      'Allergic rhinitis',
+      'Exercise-induced bronchospasm',
+      'Seasonal allergies',
+      'Breathing difficulties'
+    ],
+    warnings: [
+      'Not for acute attacks',
+      'Monitor mood changes',
+      'Continue other medications',
+      'Regular check-ups needed',
+      'Tell doctor if pregnant'
+    ],
+    sideEffects: {
+      common: [
+        'Headache',
+        'Stomach pain',
+        'Diarrhea',
         'Fatigue',
-        'Stomach upset'
+        'Mild rash'
       ],
       serious: [
         'Mood changes',
-        'Allergic reactions',
+        'Behavior changes',
         'Liver problems',
-        'Depression',
-        'Suicidal thoughts (rare)'
+        'Allergic reactions',
+        'Sleep problems'
       ]
     },
-    overdoseEffects: 'Overdose may cause drowsiness, restlessness, and rapid heartbeat. In severe cases, it may cause confusion and seizures. Seek immediate medical attention.',
+    overdoseEffects: 'Overdose may cause headache, stomach pain, thirst, and drowsiness. Seek medical attention if suspected.',
     dosage: {
       description: 'Take one tablet daily in the evening.',
       ageGroups: [
         {
-          group: 'Adults and children over 15 years',
-          dosage: '1 tablet once daily',
-          notes: 'Take in the evening'
-        },
-        {
-          group: 'Children 6-15 years',
-          dosage: 'As prescribed by doctor',
-          notes: 'Different strength available'
-        },
-        {
-          group: 'Children under 6 years',
-          dosage: 'Not recommended',
-          notes: 'Use pediatric formulation'
+          group: 'Adults and teenagers',
+          dosage: '10mg once daily',
+          notes: 'Take in evening'
         }
       ]
     },
-    administration: 'Take one tablet daily in the evening with or without food. Swallow whole with water.',
+    administration: 'Take in the evening with or without food.',
     storage: {
       temperature: 'Store below 30°C',
-      instructions: 'Protect from light and moisture.'
+      instructions: 'Keep away from moisture'
     },
-    expiryDate: '2025-05-20',
-    disposal: 'Return unused medicine to pharmacy for proper disposal.'
+    expiryDate: '2025-09-30',
+    disposal: 'Return unused medicine to pharmacy.'
+  },
+  // Pain and Inflammation
+  {
+    id: 'diclofenac-50',
+    name: 'Voveran 50',
+    form: 'Tablet',
+    strength: '50mg',
+    purpose: 'Voveran (Diclofenac) is a non-steroidal anti-inflammatory drug (NSAID) used to treat pain, inflammation, and stiffness caused by various conditions.',
+    benefits: [
+      'Reduces pain',
+      'Decreases inflammation',
+      'Relieves arthritis symptoms',
+      'Manages acute pain',
+      'Reduces fever'
+    ],
+    ingredients: ['Diclofenac Sodium 50mg'],
+    categories: ['Pain Relief', 'Anti-inflammatory', 'NSAID'],
+    conditions: [
+      'Arthritis',
+      'Back pain',
+      'Joint pain',
+      'Muscle pain',
+      'Post-operative pain'
+    ],
+    warnings: [
+      'Take with food',
+      'Avoid long-term use',
+      'Risk of stomach bleeding',
+      'Not for heart patients',
+      'Avoid if allergic to NSAIDs'
+    ],
+    sideEffects: {
+      common: [
+        'Stomach pain',
+        'Heartburn',
+        'Nausea',
+        'Dizziness',
+        'Headache'
+      ],
+      serious: [
+        'Stomach bleeding',
+        'Heart problems',
+        'Kidney problems',
+        'Liver damage',
+        'Severe allergic reactions'
+      ]
+    },
+    overdoseEffects: 'Overdose can cause severe stomach pain, vomiting, bleeding, and kidney problems. Seek immediate medical attention.',
+    dosage: {
+      description: 'Take one tablet 2-3 times daily with food.',
+      ageGroups: [
+        {
+          group: 'Adults',
+          dosage: '50mg 2-3 times daily',
+          notes: 'Take with food'
+        }
+      ]
+    },
+    administration: 'Take with food or milk to prevent stomach upset.',
+    storage: {
+      temperature: 'Store below 30°C',
+      instructions: 'Keep away from moisture'
+    },
+    expiryDate: '2025-10-31',
+    disposal: 'Return unused medicine to pharmacy.'
   }
 ];
+
+// Enhanced recommendation system based on symptoms and conditions
+const getRecommendationScore = (medicine: Medicine, symptoms: string[]): number => {
+  let score = 0;
+  
+  // Check if medicine treats any of the symptoms
+  symptoms.forEach(symptom => {
+    // Check conditions
+    if (medicine.conditions.some(condition => 
+      condition.toLowerCase().includes(symptom.toLowerCase())
+    )) {
+      score += 2;
+    }
+    
+    // Check categories
+    if (medicine.categories.some(category =>
+      category.toLowerCase().includes(symptom.toLowerCase())
+    )) {
+      score += 1.5;
+    }
+    
+    // Check purpose
+    if (medicine.purpose.toLowerCase().includes(symptom.toLowerCase())) {
+      score += 1;
+    }
+  });
+  
+  // Additional scoring based on medicine properties
+  if (medicine.warnings.length < 3) score += 0.5; // Prefer medicines with fewer warnings
+  if (medicine.sideEffects.serious.length < 3) score += 0.5; // Prefer medicines with fewer serious side effects
+  
+  return score;
+};
 
 // Local storage keys
 const BOOKMARKS_KEY = 'mediscan_bookmarks';
@@ -388,17 +443,13 @@ const saveBookmarkedIds = (ids: string[]): void => {
 
 // Function to scan medicine (mock implementation)
 export const scanMedicine = async (imageData: string): Promise<string | null> => {
-  // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // For demo purposes, return a random medicine ID
   const index = Math.floor(Math.random() * mockMedicines.length);
   return mockMedicines[index].id;
 };
 
-// Function to get medicine details
+// Enhanced medicine details function
 export const getMedicineDetails = async (id: string): Promise<Medicine> => {
-  // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 700));
   
   const bookmarkedIds = getBookmarkedIds();
@@ -414,34 +465,35 @@ export const getMedicineDetails = async (id: string): Promise<Medicine> => {
   };
 };
 
-// Function to search medicines
+// Enhanced search function with better matching
 export const searchMedicines = async (
   query: string, 
   filters?: { categories?: string[], forms?: string[] }
 ): Promise<Medicine[]> => {
-  // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 1000));
   
   const bookmarkedIds = getBookmarkedIds();
   
   let results = mockMedicines.filter(medicine => {
-    const matchesQuery = medicine.name.toLowerCase().includes(query.toLowerCase()) ||
-                         medicine.ingredients.some(ing => ing.toLowerCase().includes(query.toLowerCase())) ||
-                         medicine.conditions.some(condition => condition.toLowerCase().includes(query.toLowerCase()));
+    const searchTerms = query.toLowerCase().split(' ');
     
-    // Apply category filter if provided
+    const matchesQuery = searchTerms.every(term => 
+      medicine.name.toLowerCase().includes(term) ||
+      medicine.ingredients.some(ing => ing.toLowerCase().includes(term)) ||
+      medicine.conditions.some(condition => condition.toLowerCase().includes(term)) ||
+      medicine.categories.some(category => category.toLowerCase().includes(term))
+    );
+    
     const matchesCategory = !filters?.categories?.length || 
                           medicine.categories.some(cat => 
                             filters.categories?.includes(cat));
     
-    // Apply form filter if provided
     const matchesForm = !filters?.forms?.length || 
                         filters.forms.includes(medicine.form);
     
     return matchesQuery && matchesCategory && matchesForm;
   });
   
-  // Add bookmark information
   results = results.map(medicine => ({
     ...medicine,
     isBookmarked: bookmarkedIds.includes(medicine.id)
@@ -450,28 +502,40 @@ export const searchMedicines = async (
   return results;
 };
 
-// Function to toggle bookmark status
+// Enhanced recommendation system
+export const getRecommendedMedicines = async (symptoms: string[]): Promise<Medicine[]> => {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  const scoredMedicines = mockMedicines.map(medicine => ({
+    medicine,
+    score: getRecommendationScore(medicine, symptoms)
+  }));
+  
+  // Sort by score and return top recommendations
+  return scoredMedicines
+    .sort((a, b) => b.score - a.score)
+    .filter(({ score }) => score > 0) // Only return relevant recommendations
+    .slice(0, 5)
+    .map(({ medicine }) => medicine);
+};
+
+// Bookmark functions
 export const toggleBookmark = async (id: string): Promise<boolean> => {
-  // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 300));
   
   const bookmarkedIds = getBookmarkedIds();
   
   if (bookmarkedIds.includes(id)) {
-    // Remove bookmark
     const updated = bookmarkedIds.filter(bookmarkId => bookmarkId !== id);
     saveBookmarkedIds(updated);
     return false;
   } else {
-    // Add bookmark
     saveBookmarkedIds([...bookmarkedIds, id]);
     return true;
   }
 };
 
-// Function to get all bookmarked medicines
 export const getBookmarkedMedicines = async (): Promise<Medicine[]> => {
-  // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 700));
   
   const bookmarkedIds = getBookmarkedIds();
